@@ -6,9 +6,11 @@ import { Championship } from '../../models/championship.model'
 import Constants from '../../constants/Constants'
 import Moment from 'moment'
 import { useNavigation } from "@react-navigation/core"
+import { useTranslation } from 'react-i18next'
 
 function Championships() {
   const navigation = useNavigation()
+  const { t } = useTranslation()
 
   const [championships, setChampionships] = useState([])
 
@@ -43,7 +45,7 @@ function Championships() {
             icon={<Icon name='search' color='white'/>}
             buttonStyle={styles.button}
             onPress={() => navigation.navigate('Fights', {championshipId: championship.id})}
-            title='VOIR'/>
+            title={t('button.view').toLocaleUpperCase()}/>
         </Card>
       )
     })

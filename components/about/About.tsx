@@ -4,7 +4,7 @@ import { Button, Card } from 'react-native-elements';
 import * as WebBrowser from 'expo-web-browser';
 import Constants from "../../constants/Constants"
 
-function About() {
+function About({navigation}) {
 
   const openBrowser = () => {
     WebBrowser.openBrowserAsync('https://sites.google.com/view/ffsavate-championship');
@@ -16,6 +16,7 @@ function About() {
       title='A Propos'
       image={{uri: Constants.urlAssets + '/assets/championships/unknown.jpg'}}>
       <Text>seb_fou@hotmail.com</Text>
+      <Button title="Dev" onPress={() => navigation.navigate('StoryBook')}/>
       <Text>Paris, France | 2020</Text>
       <Text>© Tous droits réservés</Text>
       <Button title="App Privacy Policy" onPress={openBrowser}/>

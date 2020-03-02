@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     margin: 20
   },
   cup: {
-    width: 40,
-    height: 40
+    width: 80,
+    height: 70
   }
 });

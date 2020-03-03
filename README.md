@@ -19,3 +19,7 @@ To manage expo credential :
 ````bash
 expo credentials:manager
 ````
+Set IP Machine to test with Expo :
+````bash
+export REACT_NATIVE_PACKAGER_HOSTNAME=192.168.0.25
+````

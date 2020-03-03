@@ -21,6 +21,7 @@ const resources = {
       'button.view': 'voir',
       'tabs.championships': 'Championnats',
       'tabs.events': 'Calendrier',
+      'tabs.about': 'A propos',
       'header.fights': 'Combats',
       'header.fight': 'Combat',
       'header.video': 'Vidéo',
@@ -29,11 +30,11 @@ const resources = {
 }
 
 i18n
-  .use(LanguageDetector)
+  //.use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    // lng: 'fr',
+    lng: 'fr',
     fallbackLng: 'en',
     keySeparator: true,
     interpolation: {

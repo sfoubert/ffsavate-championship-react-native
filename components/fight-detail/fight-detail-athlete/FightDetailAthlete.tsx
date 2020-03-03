@@ -1,19 +1,31 @@
-import React from 'react';
-import { StyleSheet, Text, Image } from 'react-native';
-import { Button, Card, Icon } from 'react-native-elements';
-import Constants from '../../../constants/Constants';
+import React from 'react'
+import { StyleSheet, Text, Image, View } from 'react-native'
+import { Button, Card, Icon } from 'react-native-elements'
+import Constants from '../../../Constants'
 import Cup from '../../shared/cup/Cup'
 import isWinner from '../../shared/utils'
 
 function FightDetailAthlete({fight, athlete, navigation}) {
 
-    const picture = athlete.picture ? athlete.picture : '/assets/athletes/unknown.jpg';
+  function getPicture() {
+    let picture = '/assets/athletes/unknown.jpg'
+    if (athlete.picture) {
+      picture = athlete.picture;
+    } else if (athlete.gender == 'M') {
+      picture = '/assets/athletes/man.svg'
+    } else if (athlete.gender == 'F') {
+      picture = '/assets/athletes/woman.svg'
+    }
+    return picture
+  }
+
+  const picture = getPicture()
     return (
       <Card containerStyle={styles.card}
             key={athlete.id}
             title={athlete.firstName + ' ' + athlete.lastName}>
         <Image
-          style={{width: 200, height: 200}}
+          style={styles.photo}
           source={{uri: Constants.urlAssets + picture}}
         />
 
@@ -36,23 +48,26 @@ function FightDetailAthlete({fight, athlete, navigation}) {
                   onPress={() => navigation.navigate('FightVideo', {url: fight.video})}
           />
         ) : null}
-        {isWinner(fight, athlete) ? <Text><Cup style={styles.cup} /></Text> : null}
+
+        <View style={styles.viewCup}>
+          {isWinner(fight, athlete) ? <Cup style={styles.cup} /> : null}
+        </View>
       </Card>
-    );
+    )
 }
 
-export default FightDetailAthlete;
+export default FightDetailAthlete
 
 const styles = StyleSheet.create({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
     margin: 5,
     height: '95%',
-    width: '95%'
+    width: '95%',
   },
   picture: {},
   video: {
@@ -61,5 +76,15 @@ const styles = StyleSheet.create({
   cup: {
     width: 80,
     height: 70
+  },
+  viewCup: {
+    width: 80,
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  photo: {
+    width: 200,
+    height: 200
   }
-});
+})

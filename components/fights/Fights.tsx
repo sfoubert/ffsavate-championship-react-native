@@ -6,8 +6,8 @@ import { Icon, ListItem } from 'react-native-elements'
 import Cup from '../shared/cup/Cup'
 import isWinner from '../shared/utils'
 
-function Fights({ route, navigation }) {
-  const { championshipId } = route.params
+function Fights({route, navigation}) {
+  const {championshipId} = route.params
   const [fights, setFights] = useState([])
 
   useEffect(() => {
@@ -38,11 +38,17 @@ function Fights({ route, navigation }) {
                 ) : null}
                 <Text style={styles.subtitleText}>
                   {f.athlete1.lastName.toUpperCase()}
-                  {isWinner(f, f.athlete1) ? <Cup style={styles.cup} /> : ''}
-                /
-                  {f.athlete2.lastName.toUpperCase()}
-                  {isWinner(f, f.athlete2) ? <Cup style={styles.cup} /> : ''}
                 </Text>
+                <View style={{width: 16,height: 14}}>
+                {isWinner(f, f.athlete1) ? <Cup style={styles.cup}/> : null}
+                </View>
+                <Text style={styles.subtitleText}>
+                  /
+                  {f.athlete2.lastName.toUpperCase()}
+                </Text>
+                <View style={{width: 16,height: 14}}>
+                {isWinner(f, f.athlete2) ? <Cup style={styles.cup}/> : null}
+                </View>
               </View>
             }
             onPress={() => navigation.navigate('FightDetail', {fight: f})}
@@ -64,15 +70,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
 
-  subtitleView : {
+  subtitleView: {
     flexDirection: 'row',
     alignSelf: 'flex-start'
   },
-  subtitleText : {
+  subtitleText: {
     paddingTop: 7
   },
   viewIcon: {
-    color : 'dodgerblue',
+    color: 'dodgerblue',
     width: 20,
     margin: 5
   },

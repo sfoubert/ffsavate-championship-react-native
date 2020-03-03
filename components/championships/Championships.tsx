@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text } from 'react-native'
 import { Button, Card, Icon } from 'react-native-elements'
 import { findChampionships } from '../../services/championships.service'
 import { Championship } from '../../models/championship.model'
-import Constants from '../../constants/Constants'
+import Constants from '../../Constants'
 import Moment from 'moment'
 import { useNavigation } from "@react-navigation/core"
 import { useTranslation } from 'react-i18next'

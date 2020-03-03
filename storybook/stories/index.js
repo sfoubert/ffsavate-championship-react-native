@@ -12,9 +12,14 @@ const style = {
 
 const CenteredView = ({children}) => <View style={style}>{children}</View>
 
-storiesOf('Cup', module).add('default view', () => (
+storiesOf('Cup', module).add('medium view', () => (
   <CenteredView>
     <Cup style={styles.cup}>
+    </Cup>
+  </CenteredView>
+)).add('small view', () => (
+  <CenteredView>
+    <Cup style={{width : 16, height: 14}}>
     </Cup>
   </CenteredView>
 ))

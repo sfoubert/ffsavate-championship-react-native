@@ -140,9 +140,4 @@ const styles = StyleSheet.create({
   tabStyle: {
     backgroundColor: 'dodgerblue',
   },
-  tabBarLabel: {
-    fontSize: 13,
-    color: '#B0C4DE',
-    fontFamily: 'Arial, Helvetica, sans-serif',
-  }
 })

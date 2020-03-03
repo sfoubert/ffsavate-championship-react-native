@@ -9,6 +9,7 @@ describe('FightDetail', () => {
     it('should be rendered', () => {
         const athlete1: Athlete = {
             id: '1',
+            gender: 'M',
             firstName: 'firstName1',
             lastName: 'lastName1',
             picture: 'asset.jpg',
@@ -17,6 +18,7 @@ describe('FightDetail', () => {
         };
         const athlete2: Athlete = {
             id: '2',
+            gender: 'M',
             firstName: 'firstName2',
             lastName: 'lastName2',
             picture: 'asset.jpg',

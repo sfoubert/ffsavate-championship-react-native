@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
   tabBarLabel: {
     fontSize: 13,
     color: '#B0C4DE',
-    fontFamily: 'Arial, Helvetica, sans-serif',
+    //fontFamily: 'Arial, Helvetica, sans-serif',
   }
 })

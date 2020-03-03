@@ -27,7 +27,7 @@
     ],
     "android": {
       "package": "com.ffsavate.championship",
-      "versionCode": 2
+      "versionCode": 10006
     },
     "ios": {
       "bundleIdentifier": "com.ffsavate.championship",

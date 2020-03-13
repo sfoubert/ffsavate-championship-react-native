@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { ScrollView, StyleSheet, Text } from 'react-native'
+import { ActivityIndicator, ScrollView, StyleSheet, Text } from 'react-native'
 import { Button, Card, Icon } from 'react-native-elements'
 import { findChampionships } from '../../services/championships.service'
 import { Championship } from '../../models/championship.model'
 import Constants from '../../Constants'
 import Moment from 'moment'
-import { useNavigation } from "@react-navigation/core"
+import { useNavigation } from '@react-navigation/core'
 import { useTranslation } from 'react-i18next'
 
 function Championships() {
@@ -13,12 +13,14 @@ function Championships() {
   const { t } = useTranslation()
 
   const [championships, setChampionships] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
 
     async function fetchFights() {
       const championships: Championship[] = await findChampionships()
       setChampionships(championships)
+      setLoading(false)
     }
 
     fetchFights()
@@ -34,6 +36,10 @@ function Championships() {
   )
 
   function renderCards() {
+    if(loading) {
+      return (<ActivityIndicator size='large' color='#0000ff' />)
+    }
+
     return championships.map((championship: Championship) => {
       return (
         <Card

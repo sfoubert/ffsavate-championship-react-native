@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ActivityIndicator, ScrollView, StyleSheet } from 'react-native'
 import { ListItem } from 'react-native-elements'
 import { findEvents } from '../../services/events.service'
 import { Event } from '../../models/event.model'
@@ -7,18 +7,25 @@ import Moment from 'moment'
 
 function Events() {
 
-    const [events, setEvents] = useState([])
+  const [events, setEvents] = useState([])
+  const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
 
-        async function fetchEvents() {
-            const events: Event[] = await findEvents(0, 20)
-            setEvents(events)
-        }
+  useEffect(() => {
 
-      fetchEvents()
+    async function fetchEvents() {
+      const events: Event[] = await findEvents(0, 20)
+      setEvents(events)
+      setLoading(false)
+    }
 
-    }, [])
+    fetchEvents()
+
+  }, [])
+
+  if(loading) {
+    return (<ActivityIndicator size='large' color='#0000ff' />)
+  }
 
   return (
     <ScrollView style={styles.container}>
@@ -28,7 +35,7 @@ function Events() {
             <ListItem
               key={e.id}
               title={e.label}
-              subtitle={formatDates(e.startDate, e.endDate)}
+              subtitle={formatDates(e.startDate, e.endDate) + ' - ' + e.description}
               bottomDivider
             />
           )

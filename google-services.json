@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "381212872489",
+    "firebase_url": "https://ffsavate-championship.firebaseio.com",
+    "project_id": "ffsavate-championship",
+    "storage_bucket": "ffsavate-championship.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381212872489:android:380d937284cd5735",
+        "android_client_info": {
+          "package_name": "com.ffsavate.championship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381212872489-s5m5s46u75cme7p9vcpfkufi54aq123n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXah7fFGIcgTw1wuv60SjswPUCb-wR9EE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381212872489-s5m5s46u75cme7p9vcpfkufi54aq123n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

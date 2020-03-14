@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
   viewCup: {
     width: '100%',
     alignItems: 'center',
-    textAlign: 'right'
   },
   photo: {
     width: 200,

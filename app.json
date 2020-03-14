@@ -27,7 +27,8 @@
     ],
     "android": {
       "package": "com.ffsavate.championship",
-      "versionCode": 10006
+      "versionCode": 10007,
+      "googleServicesFile": "./google-services.json"
     },
     "ios": {
       "bundleIdentifier": "com.ffsavate.championship",

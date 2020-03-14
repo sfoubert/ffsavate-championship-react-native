@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -15,7 +15,19 @@ import './i18n'
 import { useTranslation } from 'react-i18next'
 import StorybookUIRoot from './storybook'
 
+import registerForPushNotificationsAsync from './services/pushNotification.service'
+import * as firebase from 'firebase'
+
 const Stack = createStackNavigator();
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAXah7fFGIcgTw1wuv60SjswPUCb-wR9EE',
+  authDomain: 'ffsavate-championship.firebaseapp.com',
+  databaseURL: 'https://ffsavate-championship.firebaseio.com',
+  projectId: 'ffsavate-championship',
+  storageBucket: 'ffsavate-championship.appspot.com',
+  messagingSenderId: '381212872489'
+};
 
 function ChampionshipStack() {
   const { t } = useTranslation()
@@ -125,11 +137,20 @@ const ChampionshipTabs: FunctionComponent = () => {
   )
 }
 
-const App: FunctionComponent = () => (
-  <NavigationContainer>
-    <ChampionshipTabs/>
-  </NavigationContainer>
-)
+const App: FunctionComponent = () => {
+
+  firebase.initializeApp(firebaseConfig);
+
+  useEffect(() => {
+    registerForPushNotificationsAsync()
+  }, [])
+
+  return (
+    <NavigationContainer>
+      <ChampionshipTabs/>
+    </NavigationContainer>
+  )
+}
 
 export default App
 

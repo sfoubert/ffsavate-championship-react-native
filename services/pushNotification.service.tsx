@@ -20,10 +20,9 @@ export default async function registerForPushNotificationsAsync() {
   // Get the token that identifies this device
   let token = await Notifications.getExpoPushTokenAsync()
 
-
   const firestore = firebase.firestore();
 
-  firestore.collection("tokens").doc("unknown").set({
+  firestore.collection("tokens").doc(token).set({
     token: token,
     creationDate: new Date()
   })

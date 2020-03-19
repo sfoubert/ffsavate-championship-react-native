@@ -27,12 +27,12 @@
     ],
     "android": {
       "package": "com.ffsavate.championship",
-      "versionCode": 10007,
+      "versionCode": 10008,
       "googleServicesFile": "./google-services.json"
     },
     "ios": {
       "bundleIdentifier": "com.ffsavate.championship",
-      "buildNumber": "2.0.0",
+      "buildNumber": "2.0.2",
       "supportsTablet": true
     }
   }

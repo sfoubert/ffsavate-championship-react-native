@@ -5,7 +5,6 @@
     "description": "FFSavate Championship is an app written in react-native",
     "githubUrl": "https://github.com/sfoubert/ffsavate-championship-react-native",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
@@ -27,12 +26,12 @@
     ],
     "android": {
       "package": "com.ffsavate.championship",
-      "versionCode": 10008,
+      "versionCode": 10009,
       "googleServicesFile": "./google-services.json"
     },
     "ios": {
       "bundleIdentifier": "com.ffsavate.championship",
-      "buildNumber": "2.0.2",
+      "buildNumber": "2.0.3",
       "supportsTablet": true
     }
   }
